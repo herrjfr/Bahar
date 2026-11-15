@@ -14,7 +14,7 @@ function Header() {
   }
   return (
     <>
-      <div className="w-full h-[200vh] flex flex-col">
+      <div className="w-full h-[180px] flex flex-col">
         <div className="bir h-[34px] bg-[#EA0B17] flex items-center justify-between font-medium text-[13px] tracking-normal px-[150px]">
           <nav>
             <ul>
@@ -55,7 +55,7 @@ function Header() {
 
         <div className="uc sticky top-0 z-50 h-[55px] bg-[#FBEAEA] flex items-center px-[150px]">
           <nav>
-            <ul className='flex items-center gap-[10px] font-[500] whitespace-nowrap'>
+            <ul className='flex items-center font-[500] whitespace-nowrap'>
               <li className='group'>
                 <Link to="gunesden-qorunma" className='text-[#ED1C24] inline-block px-3 py-1.5 rounded-full hover:bg-[#ED1C24] hover:text-white transition-all duration-200'>Günəşdən qorunma</Link>
               </li>
