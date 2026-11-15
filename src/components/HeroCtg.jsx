@@ -10,6 +10,8 @@ function HeroCtg() {
   const startX = useRef(0)
   const startPosition = useRef(0)
 
+  const [hover, setHover] = useState(null)
+
   const handleMouseDown = (e) => {
     setIsDragging(true)
 
@@ -124,14 +126,24 @@ function HeroCtg() {
           }}
           className='flex gap-x-[10px] select-none'>
           {categories.map(x => {
-            return <div key={x.id} className='w-[150px] shrink-0 flex flex-col items-center gap-y-[15px] cursor-pointer hover:bg-black/10'>
-              <div className='w-[150px] h-[150px] rounded-[50%] border-1 border-[#FFDFE2] flex items-center justify-center'>
-                <img 
-                draggable={false} 
-                className='w-[130px] h-[130px] rounded-[50%]' 
-                src={x.img} />
+            return <div key={x.id}
+              onMouseEnter={() => setHover(x.id)}
+              onMouseLeave={() => setHover(null)}
+              className='w-[150px] shrink-0 flex flex-col items-center gap-y-[15px] cursor-pointer'>
+              <div
+              style={hover==x.id?{border: "solid gray 1px"}:{}} 
+              className='w-[150px] h-[150px] rounded-[50%] border-1 border-[#FFDFE2] flex items-center justify-center'>
+                <div className='w-[130px] h-[130px] rounded-[50%] overflow-hidden'>
+                  <img
+                    style={hover==x.id? {scale: "1.05"}:{}}
+                    draggable={false}
+                    className='w-[130px] h-[130px] rounded-[50%] transition-all duration-400'
+                    src={x.img} />
+                </div>
               </div>
-              <p className='text-[17px] font-[600] text-center'>{x.Name}</p>
+              <p
+                style={hover == x.id ? { color: "red" } : {}}
+                className='text-[17px] font-[600] text-center transition-all duration-500'>{x.Name}</p>
             </div>
           })}
         </div>
