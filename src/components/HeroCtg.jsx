@@ -2,8 +2,46 @@ import React, { useRef, useState } from 'react'
 
 function HeroCtg() {
   const sliderRef = useRef(null)
+  const viewportRef = useRef(null)
 
   const [isDragging, setIsDragging] = useState(false)
+  const [position, setPosition] = useState(0)
+
+  const startX = useRef(0)
+  const startPosition = useRef(0)
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true)
+
+    startX.current = e.clientX
+    startPosition.current = position
+
+    e.preventDefault()
+  }
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return
+
+    const walk = e.clientX - startX.current
+
+    setPosition(startPosition.current + walk)
+  }
+
+  const handleMouseUp = () => {
+    if (!isDragging) return
+
+    setIsDragging(false)
+
+    const viewport = viewportRef.current
+    const slider = sliderRef.current
+
+    const maxTranslate = Math.min(
+      0,
+      viewport.clientWidth - slider.scrollWidth
+    )
+
+    setPosition(prev => Math.max(maxTranslate, Math.min(0, prev)))
+  }
 
   const categories = [
     {
@@ -69,15 +107,29 @@ function HeroCtg() {
   ]
 
 
-
   return (
-    <section className='w-[100%] px-[150px] mt-[200px]'>
-      <div className='w-[100%] overflow-hidden'>
-        <div className='flex gap-x-[10px]'>
+    <section className='w-[100%] py-[50px] px-[150px]'>
+      <div
+        ref={viewportRef}
+        className='w-[100%] overflow-hidden'>
+        <div
+          ref={sliderRef}
+          onMouseLeave={handleMouseUp}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          onMouseDown={handleMouseDown}
+          style={{
+            transform: `translateX(${position}px)`,
+            transition: isDragging ? 'none' : 'transform 300ms ease'
+          }}
+          className='flex gap-x-[10px] select-none'>
           {categories.map(x => {
             return <div key={x.id} className='w-[150px] shrink-0 flex flex-col items-center gap-y-[15px] cursor-pointer hover:bg-black/10'>
               <div className='w-[150px] h-[150px] rounded-[50%] border-1 border-[#FFDFE2] flex items-center justify-center'>
-                <img className='w-[130px] h-[130px] rounded-[50%]' src={x.img} />
+                <img 
+                draggable={false} 
+                className='w-[130px] h-[130px] rounded-[50%]' 
+                src={x.img} />
               </div>
               <p className='text-[17px] font-[600] text-center'>{x.Name}</p>
             </div>
