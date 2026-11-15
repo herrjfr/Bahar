@@ -5,16 +5,30 @@ import { CiSearch } from "react-icons/ci";
 import { RiDiscountPercentLine } from "react-icons/ri";
 import { RiUserLine } from "react-icons/ri";
 import { AiOutlineHeart } from "react-icons/ai";
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function Header() {
   const [lang, setLang] = useState('AZ')
   const toggleLanguage = () => {
     setLang(lang === 'AZ' ? 'RU' : 'AZ')
   }
+  const [isSticky, setisSticky] = useState(false)
+  useEffect(() =>{
+    const handleScroll = ()=>{
+      if (window.scrollY > 140){
+        setisSticky(true)
+      } else{
+        setisSticky(false)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return()=>window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <>
-      <div className="w-full h-[180px] flex flex-col">
+      <div className="w-full flex flex-col">
         <div className="bir h-[34px] bg-[#EA0B17] flex items-center justify-between font-medium text-[13px] tracking-normal px-[150px]">
           <nav>
             <ul>
@@ -53,8 +67,8 @@ function Header() {
           </nav>
         </div>
 
-        <div className="uc sticky top-0 z-50 h-[55px] bg-[#FBEAEA] flex items-center px-[150px]">
-          <nav>
+        <div className={`uc w-full bg-[#FBEAEA] flex items-center justify-center shadow-sm px-[150px] transition-all duration-200 z-50 ${isSticky ?"fixed top-0 left-0 h-[75px]": "relative h-[55px]"}`}>
+          <nav className='w-full flex justify-center relative'>
             <ul className='flex items-center font-[500] whitespace-nowrap'>
               <li className='group'>
                 <Link to="gunesden-qorunma" className='text-[#ED1C24] inline-block px-3 py-1.5 rounded-full hover:bg-[#ED1C24] hover:text-white transition-all duration-200'>Günəşdən qorunma</Link>
@@ -108,6 +122,7 @@ function Header() {
             </ul>
           </nav>
         </div>
+        <div className="dord w-full h-[20px]"></div>
       </div>
     </>
   )
