@@ -46,7 +46,7 @@ const Products = () => {
   return (
     <div className="flex flex-wrap justify-center gap-[10px] px-[150px]">
 
-  
+
       <div className="w-full flex items-center justify-center gap-6 mb-10">
 
 
@@ -59,7 +59,7 @@ const Products = () => {
 
         <img src={line} className="w-3 h-10 object-fill" />
 
-  
+
         <div className="flex items-center gap-2 cursor-pointer">
           <img
             src={bestIcon}
@@ -84,7 +84,7 @@ const Products = () => {
       <div className="flex flex-wrap -mx-2">
 
         {products.map((product, index) => (
-          <div key={index} className="w-1/4 px-2 mb-6">
+          <div key={index} className="w-1/4 px-2 mb-6 flex justify-center">
             <ProductCard
               image={product.image}
               status={product.status}

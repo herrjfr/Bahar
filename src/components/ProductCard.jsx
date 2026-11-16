@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { TrendingDown, Heart, Handbag } from 'lucide-react'
 import bestIconTyu from '../assets/bestsell2.png'
@@ -6,9 +5,9 @@ import percentIcon from '../assets/percent2.png'
 
 const ProductCard = ({ image, status }) => {
     return (
-        <div className="group relative w-[300px] cursor-pointer hover:z-[999]">
+        <div className="group relative w-[290px] cursor-pointer hover:z-[1]">
 
-            <div className="relative w-full h-[500px] border border-gray-200 rounded-xl overflow-hidden flex flex-col bg-white">
+            <div className="relative w-full h-[500px] border border-gray-200 rounded-xl overflow-hidden flex flex-col bg-white group-hover:rounded-b-none group-hover:border-b-0">
 
                 <div className="w-full h-[55%] shrink-0 relative bg-white overflow-hidden mt-[7px]">
 
@@ -83,7 +82,7 @@ const ProductCard = ({ image, status }) => {
                 </div>
             </div>
 
-            <div className="absolute top-full left-0 w-full h-[70px] bg-white rounded-b-xl border-x border-b border-gray-200 flex items-center justify-center gap-[10px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[999]">
+            <div className="absolute top-full left-0 w-full h-[70px] bg-white rounded-b-xl border-x border-b border-gray-200 border-t-0 rounded-t-none flex items-center justify-center gap-[10px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[1]">
 
 
                 <div className="w-[70px] h-[50px] shrink-0 border border-black bg-white flex items-center justify-center">
