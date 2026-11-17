@@ -8,7 +8,7 @@ function MainText() {
   const [open,setOpen] = useState(true)
 
   return (
-    <section className='px-[150px] flex flex-col items-start gap-y-[20px] pt-[20px]'>
+    <section className='px-[150px] flex flex-col items-start gap-y-[20px] pt-[20px] pb-[100px]'>
       <div
       className={open?"h-[200px] overflow-hidden":"overflow-hidden"}>
         <div className='Umumi w-[92%] flex flex-col gap-y-[10px] text-[14px] text-black/70 relative'>
