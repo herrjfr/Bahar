@@ -47,7 +47,9 @@ function Header() {
         </div>
 
         <div className="iki h-[90px] bg-[#FFFFFF] flex items-center gap-[50px] px-[150px]">
-          <img src={baharstore} alt="sekil" className='h-[80%] bg-cover' />
+          <Link to={"/"}>
+            <img src={baharstore} className='w-[150px]' />
+          </Link>
           <div className="relative h-[55px] w-[430px]">
             <span className='absolute flex items-center pt-[15px] pl-[10px] text-[#5E5E5E] hover:text-red-400 cursor-pointer'>
               <CiSearch className='text-2xl stroke-1 ' />
