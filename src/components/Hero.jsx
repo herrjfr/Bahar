@@ -31,18 +31,18 @@ function Hero() {
           {images.map((P, i) => (
             <SwiperSlide key={i}>
               <div className='w-full aspect-[17/7] overflow-hidden'>
-    <img
-      src={P}
-      alt=''
-      className='w-full h-full object-cover'
-    />
-  </div>
+                <img
+                  src={P}
+                  alt=''
+                  className='w-full h-full object-cover'
+                />
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
         {/* sol  */}
-        <button 
+        <button
           onClick={() => swiperRef.current?.slidePrev()}
           className='absolute left-3 top-1/2 -translate-y-1/2 z-10 w-13 h-13 rounded-full bg-white/40 hover:bg-white flex items-center justify-center cursor-pointer shadow'
         >

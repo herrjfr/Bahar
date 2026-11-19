@@ -1,116 +1,79 @@
-import React from 'react'
-import { TrendingDown, Heart, Handbag } from 'lucide-react'
-import bestIconTyu from '../assets/bestsell2.png'
-import percentIcon from '../assets/percent2.png'
+import React, { useState } from 'react'
+import { TbAwardFilled } from "react-icons/tb";
+import { PiSealPercentFill } from "react-icons/pi";
+import { TiStarburst } from "react-icons/ti";
+import { IoMdTrendingDown } from "react-icons/io";
+import { AiOutlineHeart } from "react-icons/ai";
+import { TbShoppingBagPlus } from "react-icons/tb";
 
-const ProductCard = ({ image, status }) => {
-    return (
-        <div className="group relative w-[290px] cursor-pointer hover:z-[11]">
+const ProductCard = ({item}) => {
 
-            <div className="relative w-full h-[500px] border border-gray-200 rounded-xl overflow-visible flex flex-col bg-white group-hover:rounded-b-none group-hover:border-b-0">
+    const [hover,setHover] = useState(false)
 
-                <div className="w-full h-[55%] shrink-0 relative bg-white overflow-hidden mt-[7px]">
-
-                    {status === 'low' && (
-                        <span className="absolute top-3 left-3 w-[142px] h-[38px] bg-[#F9EBDB] text-[#E98011] rounded-full flex items-center justify-center gap-1 text-[16px] font-['Inter_Tight'] z-10">
-                            <TrendingDown size={31} strokeWidth={2} />
-                            Tükənir
-                        </span>
-                    )}
-
-                    {status === 'out' && (
-                        <span className="absolute top-3 left-3 w-[142px] h-[38px] bg-[#F9EBDB] text-[#E98011] rounded-full flex items-center justify-center gap-1 text-[16px] font-['Inter_Tight'] z-10">
-                            <TrendingDown size={31} strokeWidth={2} />
-                            Stokda yoxdur
-                        </span>
-                    )}
-
+    const {barcode,brand,categories,disc_percent,id,
+        image,in_stock,is_best_seller,is_new,name,
+        old_price,packaging,price,product_code,raiting,
+        running_out,slug,volume,volume_unit,weight,weight_unit} = item
+    return(
+        <div 
+        onMouseEnter={()=>setHover(true)}
+        onMouseLeave={()=>setHover(false)}
+        key={id}
+        className='w-[290px] h-[450px] cursor-pointer'>
+            <div 
+            style={hover?{height:"520px",zIndex:"2",backgroundColor:"white"}:{}}
+            className='w-[290px] h-[450px] border-1 border-[gray]/30 rounded-[20px] flex flex-col items-start px-[20px] py-[10px] relative'>
+                <div className='forImg self-center w-[250px] h-[250px] rounded-[10px] overflow-hidden flex justify-center items-center relative'>
                     <img
-                        src={image}
-                        alt="Məhsul"
-                        className={`w-full h-full object-contain origin-center transition-transform duration-300 ease-in-out hover:scale-120 ${status === 'out' ? 'opacity-50' : ''
-                            }`}
-                    />
+                    draggable={false} 
+                    style={hover?{scale:"1.2"}:{}}
+                    className='h-[250px] transition-all duration-500' src={image}/>
+                    {is_new==1 && 
+                    <div className='text-[#1E68B9] bg-[#E4F0FC] flex items-center gap-x-[5px] px-[15px] py-[5px] rounded-[20px] absolute top-0 right-0'>
+                        <TiStarburst className='text-[22px]'/>
+                        <p className='text-[12px] font-[600]'>Yeni</p>
+                    </div>}
+                    {in_stock==0 &&
+                    <div className='text-[#E77E11] bg-[#F9EBDB] flex items-center gap-x-[5px] px-[15px] py-[5px] rounded-[20px] absolute top-0 left-0'>
+                        <IoMdTrendingDown className='text-[26px]'/>
+                        <p className='text-[12px] font-[600]'>Stokda yoxdur</p>
+                    </div>}
                 </div>
-
-                <div className="w-full px-3 pt-3">
-                    <p className="text-[19px] font-['Inter_Tight'] font-semibold text-[#19191A]">
-                        <span className="block">Məhsul haqqında məlumat</span>
-                        <span className="block">və digər əlavə sözlər burada...</span>
-                    </p>
+                <p className='pt-[10px] text-[14px] font-[600]'>{name.length>45?name.slice(0,45).toUpperCase()+"...":name.toUpperCase()}
+                </p>
+                <div className='pt-[20px] flex items-center gap-x-[15px]'>
+                    {disc_percent>0 &&
+                    <p className='bg-[#FEECED] text-[12px] font-[600] text-[#EA0B17] border-1 border-[#EA0B17] px-[12px] py-[6px] rounded-[20px]'>-{disc_percent}%</p>}
+                    {disc_percent>0 &&
+                    <p className='line-through decoration-[#EA0B17] text-[14px]'>{old_price} ₼</p>}
+                    <p className='text-[22px] font-[700]'>{price} ₼</p>
                 </div>
-
-                <div className="w-full px-3 mt-5 flex items-center gap-[22px]">
-                    <span className="bg-[#FEECED] text-[#EA0B17] border-2 border-[#EA0B17] rounded-2xl px-[11px] py-1 text-[12px]">
-                        -20%
-                    </span>
-
-                    <span className="text-[#303030] text-[14px] line-through decoration-[#EC232E] decoration-1">
-                        5.40 ₼
-                    </span>
-
-                    <span className="text-[#19191A] text-[28px] font-['Inter_Tight'] font-bold">
-                        6.21 ₼
-                    </span>
+                <div className='h-[60px] w-[100%] flex items-end gap-x-[10px]'>
+                    {is_best_seller==1 && 
+                    <div className='text-[#2D9D3F] bg-[#EBFDEE] flex items-center gap-x-[5px] px-[15px] py-[5px] rounded-[20px]'>
+                        <TbAwardFilled className='text-[26px]'/>
+                        <p className='text-[12px] font-[600]'>Bestsell...</p>
+                    </div>}
+                    {disc_percent>0 && 
+                    <div className='text-[#EA0B17] bg-[#FCE0E2] flex items-center gap-x-[5px] px-[15px] py-[5px] rounded-[20px]'>
+                        <PiSealPercentFill className='text-[26px]'/>
+                        <p className='text-[12px] font-[600]'>Endirim</p>
+                    </div>}
                 </div>
-
-                <div className="w-full mt-3 px-3 flex items-center gap-[10px]">
-
-                    <div className="flex items-center gap-2 bg-[#EBFDEE] border border-[#BDBDBD] rounded-3xl px-[27.5px] py-[10.5px]">
-                        <img
-                            src={bestIconTyu}
-                            alt="BestSell"
-                            className="w-7 h-7 object-contain"
-                        />
-
-                        <span className="text-[#2D9D3F] text-[18px] font-semibold font-['Inter_Tight']">
-                            BestSell
-                        </span>
-                    </div>
-
-                    <div className="flex items-center gap-2 bg-[#FCE0E2] border border-[#BDBDBD] rounded-3xl px-[27.5px] py-[10.5px]">
-                        <img
-                            src={percentIcon}
-                            alt="Endirim"
-                            className="w-7 h-7 object-contain"
-                        />
-
-                        <span className="text-[#EA0B17] text-[18px] font-semibold font-['Inter_Tight']">
-                            Endirim
-                        </span>
-                    </div>
-                </div>
+                {hover && 
+                    <div className='w-[100%] pt-[30px] flex justify-between'>
+                        <button className='w-[65px] h-[50px] rounded-[5px] border-[gray]/50 border-1 flex justify-center items-center cursor-pointer'>
+                            <AiOutlineHeart className='text-[25px] text-[gray]'/>
+                        </button>
+                        <button className='bg-[black] w-[175px] h-[50px] rounded-[5px] text-[white] cursor-pointer flex items-center justify-center gap-x-[10px]'>
+                            <TbShoppingBagPlus className='text-[25px] text-[gray]'/>
+                            <p className='font-[600] text-[16px]'>Səbətə at</p>
+                        </button>
+                    </div>}
             </div>
-
-            <div className="absolute top-[calc(100%-20px)] left-0 w-full h-[95px] bg-white rounded-b-xl border-x border-b border-gray-200 border-t-0 flex items-center justify-center gap-[10px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[50]">
-
-
-                <div className="w-[70px] h-[50px] shrink-0 border border-black bg-white flex items-center justify-center">
-                    <Heart
-                        size={22}
-                        color="#000000"
-                        strokeWidth={1.8}
-                    />
-                </div>
-
-
-                <div className="w-[170px] h-[50px] shrink-0 bg-black rounded-md flex items-center justify-center gap-[10px]">
-                    <Handbag
-                        size={21}
-                        color="#FFFFFF"
-                        strokeWidth={1.8}
-                    />
-
-                    <span className="text-white text-[14px] font-['Inter_Tight']">
-                        Səbətə at
-                    </span>
-                </div>
-
-            </div>
-
-
         </div>
     )
+    
 }
 
 export default ProductCard

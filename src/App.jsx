@@ -8,6 +8,7 @@ import Wishlist from './components/Wishlist'
 import ShoppingCart from './components/ShoppingCart'
 
 function App() {
+
   return (
     <Routes>
       <Route path='/' element={<Layout/>}>
