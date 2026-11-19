@@ -18,6 +18,13 @@ function Footer() {
     setLangy(langy === 'AZ' ? 'RU' : 'AZ')
   }
 
+  const scrollToTop = () =>{
+    window.scrollTo({
+      top : 0,
+      behavior: "smooth"
+    })
+  }
+
   return (
     <>
       <footer className='w-[100%] h-[530px] flex justify-center items-center px-[150px]'>
@@ -126,7 +133,7 @@ function Footer() {
             <div className="az h-[130px] w-[15%] flex gap-[10px] items-center pb-[32px]">
               <p className='text-[12px] text-gray-600 font-medium'>Hazırladı</p>
               <div className="ik1 w-[38px] h-[38px] bg-[#19191A] hover:bg-[#E6176F] transition-all duration-300 rounded-[50%] flex items-center justify-center"><span className=' text-[18px] font-bold text-[#5E5E5E]'>one</span></div>
-              <div className="ik1 w-[48px] h-[48px] ml-[10px] bg-white border border-solid border-[#EAE1E1] rounded-[50%] flex items-center justify-center"><span className=' text-[18px] font-bold text-[#EA0B17]'><FaArrowUp /></span></div>
+              <div onClick={scrollToTop} className="ik1 w-[48px] h-[48px] ml-[10px] bg-white border border-solid border-[#EAE1E1] rounded-[50%] flex items-center justify-center cursor-pointer"><span className=' text-[18px] font-bold text-[#EA0B17]'><FaArrowUp /></span></div>
             </div>
           </div>
         </div>

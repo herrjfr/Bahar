@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import kampaniyaa1 from '../assets/kampaniyall1.jpg'
 import kampaniyaa5 from '../assets/kampaniyaa5.jpg'
-import kampaniyaa2 from '../assets/kampaniyal2.png'
-import kampaniyaa3 from '../assets/kampaniyal3.png'
-import kampaniyaa4 from '../assets/kampaniyal4.png'
+import kampaniyaa2 from '../assets/kampaniyall2.jpg'
+import kampaniyaa3 from '../assets/kampaniyall3.jpg'
+import kampaniyaa4 from '../assets/kampaniyall4.jpg'
 
 function Campaigns() {
   return (
