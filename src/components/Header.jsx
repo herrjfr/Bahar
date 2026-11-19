@@ -63,7 +63,7 @@ function Header() {
                 <Link to="best_seller" className='text-[#19191A] font-semibold hover:text-[#8C8C8C] transition-colors duration-200'>Bestseller</Link>
                 <Link to="discount" className='text-[#19191A] font-semibold hover:text-[#8C8C8C] transition-colors duration-200'>Endirim</Link>
                 <Link to="new" className='text-[#19191A] font-semibold hover:text-[#8C8C8C] transition-colors duration-200'>Yeni</Link>
-                <Link to="login" className='text-[#19191A] flex items-center font-normal transition-colors duration-200 pl-[9px] pr-[9px]'><LuUser className='w-[27px] h-[27px] stroke-[1.5]' /><span className='text-[15px]'>Daxil ol</span></Link>
+                <Link to="login" className='text-[#19191A] flex items-center font-normal transition-colors duration-200 pl-[9px] pr-[9px]'><LuUser className='w-[27px] h-[27px] stroke-[1.5]' /><span className='text-[15px] hover:text-[#ED1C24] transition-all duration-200'>Daxil ol</span></Link>
                 <Link to="wishlist" className='text-[#5E5E5E] flex items-center font-semibold pl-[9px] pr-[9px]'><AiOutlineHeart className='w-[25px] h-[25px] stroke-[1.3]' /></Link>
                 <Link to="cart" className='text-[#5E5E5E] flex items-center font-semibold'><TbShoppingBagPlus className='w-[25px] h-[25px] stroke-[1.7]' /></Link>
               </li>

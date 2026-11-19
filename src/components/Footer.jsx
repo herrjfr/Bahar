@@ -115,11 +115,11 @@ function Footer() {
             <div className="az h-[90px] w-[56%]">
               <nav className='w-full'>
                 <ul className='flex flex-nowrap gap-x-6 list-inside marker:text-gray-400 text-gray-600 font-medium text-[12px]'>
-                  <li>FAQ</li>
-                  <li className='list-disc'>Çatdırılma və geri qaytarma şərtləri</li>
-                  <li className='list-disc'>Loyallıq proqramı</li>
-                  <li className='list-disc'>Ödəniş şərtləri</li>
-                  <li className='list-disc'>Gizlilik Siyasəti</li>
+                  <li className='cursor-pointer'>FAQ</li>
+                  <li className='list-disc cursor-pointer'>Çatdırılma və geri qaytarma şərtləri</li>
+                  <li className='list-disc cursor-pointer'>Loyallıq proqramı</li>
+                  <li className='list-disc cursor-pointer'>Ödəniş şərtləri</li>
+                  <li className='list-disc cursor-pointer'>Gizlilik Siyasəti</li>
                 </ul>
               </nav>
             </div>
