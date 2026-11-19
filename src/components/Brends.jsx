@@ -21,7 +21,7 @@ function Brends() {
       if (carousel.scrollLeft >= maxScroll - 2) return
 
       const startPosition = carousel.scrollLeft
-      const nextPosition = Math.min(startPosition + 212, maxScroll)
+      const nextPosition = Math.min(startPosition + 197, maxScroll)
       const distance = nextPosition - startPosition
 
       const duration = 1200
@@ -32,7 +32,6 @@ function Brends() {
 
         const elapsed = currentTime - startTime
         const progress = Math.min(elapsed / duration, 1)
-
 
         const ease = 1 - Math.pow(1 - progress, 3)
 
@@ -61,7 +60,6 @@ function Brends() {
 
     const carousel = carouselRef.current
 
-  
     cancelAnimationFrame(animationFrameRef.current)
 
     isDragging.current = true
@@ -84,6 +82,7 @@ function Brends() {
   const handlePointerUp = () => {
     isDragging.current = false
   }
+
 
   const brendler = [
     {
@@ -136,8 +135,20 @@ function Brends() {
     { id: 14, name: "topface" }
   ]
 
+
   const renderBrand = (brand) => {
     switch (brand.id) {
+      case 1:
+        return (
+          <div className="flex flex-col items-center justify-center">
+            <span className={brand.style}>
+              {brand.name}
+            </span>
+            <span className={brand.subStyle}>
+              {brand.subtitle}
+            </span>
+          </div>
+        )
 
       case 8:
         return (
@@ -238,15 +249,17 @@ function Brends() {
     }
   }
 
+
   return (
-    <div className="w-full min-h-[400px] bg-white pt-[20px] pb-8 mt-[20px]">
-      <div className="w-[1472px] mx-auto">
+    <div className="w-full pt-[20px] pb-8 mt-[20px] bg-[#FAF9F9]">
+
+      <div className="w-[1340px] mx-auto min-h-[400px] pt-[20px] pb-8 px-4">
 
         <div className="flex items-center justify-between mb-5">
           <h1 className="text-[36px] font-semibold text-black">
             Brendlər
           </h1>
-          <span className="text-[20px] font-bold text-[#19191A] cursor-pointer">
+          <span className="text-[18px] font-bold text-[#19191A] cursor-pointer">
             Hamısını göstər
           </span>
         </div>
@@ -263,7 +276,7 @@ function Brends() {
           {brendler.map((brand) => (
             <div
               key={brand.id}
-              className="w-[200px] h-[140px] rounded-[2px] shrink-0 bg-white border border-[#EEEEEE] flex items-center justify-center overflow-hidden"
+              className="w-[185px] h-[130px] rounded-[2px] shrink-0 bg-white border border-[#EEEEEE] flex items-center justify-center overflow-hidden"
             >
               {renderBrand(brand)}
             </div>
