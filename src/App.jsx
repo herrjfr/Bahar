@@ -17,11 +17,20 @@ function App() {
   return (
     <Routes>
 
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> fdcff877cd60691d4f90ebc68c0425fbacedb2a9
       <Route path='/' element={<Layout/>}>
         <Route index element={<Home/>}/>
         <Route path='/campaigns' element={<Campaigns/>}/>
         <Route path='/login' element={<Login/>}/>
+<<<<<<< HEAD
              <Route path='/registration' element={<Registration />} />
+=======
+          <Route path="/registration" element={<Registration />} />
+>>>>>>> fdcff877cd60691d4f90ebc68c0425fbacedb2a9
         <Route path='/forget-password' element={<ForgetPassword />} />
         <Route path='/wishlist' element={<Wishlist/>}/>
         <Route path='/cart' element={<ShoppingCart/>}/>
