@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import data from "../assets/data/baharProdData.json"
 import ProductCard from './ProductCard'
 import { TiStarburst } from "react-icons/ti";
 import { TbAwardFilled } from "react-icons/tb";
 import { CiDiscount1 } from "react-icons/ci";
+import {useProducts} from "../context/ProductsData"
 
 const Products = () => {
+
+  const { products } = useProducts();
+
   const [bestSeller, setBestSeller] = useState([])
   const [newPrd, setNewPrd] = useState([])
   const [discount, setDiscount] = useState([])
@@ -19,15 +22,15 @@ const Products = () => {
 
 
   useEffect(() => {
-    setBestSeller(data.filter(x => x.is_best_seller && x.name.length>30).slice(0, 16))
-    setNewPrd(data.filter(x => x.is_new && x.name.length>30).slice(0, 16))
-    setDiscount(data.filter(x => x.disc_percent && x.name.length>30).slice(0, 16))
+    setBestSeller(products.filter(x => x.is_best_seller && x.name.length>30).slice(0, 16))
+    setNewPrd(products.filter(x => x.is_new && x.name.length>30).slice(0, 16))
+    setDiscount(products.filter(x => x.disc_percent && x.name.length>30).slice(0, 16))
   }, [])
 
 
 
   return (
-    <section className='px-[150px] py-[50px] border-1 flex flex-col items-center'>
+    <section className='px-[150px] pt-[90px] flex flex-col items-center'>
       <div className='flex w-[440px] justify-between items-center text-[20px] font-[600] text-[gray]/50 pb-[20px]'>
         <div
         onClick={()=>setSelect(1)}
@@ -75,15 +78,16 @@ const Products = () => {
       </div>
       <div className='Cards flex justify-between flex-wrap gap-y-[20px]'>
         {select==1 && newPrd.map(x=>{
-          return <ProductCard item={x}/>
+          return <ProductCard key={x.id} item={x}/>
         })}
         {select==2 && bestSeller.map(x=>{
-          return <ProductCard item={x}/>
+          return <ProductCard key={x.id} item={x}/>
         })}
         {select==3 && discount.map(x=>{
-          return <ProductCard item={x}/>
+          return <ProductCard key={x.id} item={x}/>
         })}
       </div>
+      <button className='mt-[55px] mb-[30px] px-[40px] py-[10px] rounded-[10px] bg-black text-white text-[16px] font-[500] cursor-pointer hover:bg-black/70 transition-all duration-500'>Hamısını göstər</button>
     </section>
   )
 }

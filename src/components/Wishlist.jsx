@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Wishlist() {
   return (
@@ -22,18 +23,21 @@ function Wishlist() {
           </span>
         </p>
       </div>
-      <button className='group w-[295px] h-[255px] flex flex-col items-center justify-center gap-[20px] border-1 border-[#EAE1E1] rounded-[16px] cursor-pointer'>
-        <span className='transition-colors duration-300 group-hover:text-[#F0434A]'>
-          <svg width="37" height="37" viewBox="0 0 36 36" fill="none">
-            <path d="M18 2V34M2 18H34" stroke="currentColor" strokeWidth="2" />
-          </svg>
-        </span>
+      <Link to={"/"}>
+        <button className='group w-[295px] h-[255px] flex flex-col items-center justify-center gap-[20px] border-1 border-[#EAE1E1] rounded-[16px] cursor-pointer'>
+          <span className='transition-colors duration-300 group-hover:text-[#F0434A]'>
+            <svg width="37" height="37" viewBox="0 0 36 36" fill="none">
+              <path d="M18 2V34M2 18H34" stroke="currentColor" strokeWidth="2" />
+            </svg>
+          </span>
 
-        <span className='text-[15px] font-medium font-inter-tight transition-colors duration-300 group-hover:text-[#F0434A]'>
-          MƏHSULLARA KEÇİD EDİN
-        </span>
+          <span className='text-[15px] font-medium font-inter-tight transition-colors duration-300 group-hover:text-[#F0434A]'>
+            MƏHSULLARA KEÇİD EDİN
+          </span>
 
-      </button>
+        </button>
+      </Link>
+
     </div>
   )
 }
