@@ -1,5 +1,6 @@
 
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function ShoppingCart() {
   return (
@@ -54,9 +55,11 @@ function ShoppingCart() {
 
             </div>
 
-            <button className='border border-black w-[140px] h-[36px] rounded-[5px] text-[14px] font-medium bg-white text-black cursor-pointer transition-colors duration-500 hover:bg-black hover:text-white'>
-              ANA SƏHİFƏ
-            </button>
+            <Link to={"/"}>
+              <button className='border border-black w-[140px] h-[36px] rounded-[5px] text-[14px] font-medium bg-white text-black cursor-pointer transition-colors duration-500 hover:bg-black hover:text-white'>
+                ANA SƏHİFƏ
+              </button>
+            </Link>
           </div>
         </div>
 

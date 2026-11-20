@@ -7,18 +7,17 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { TbShoppingBagPlus } from "react-icons/tb";
 
 const ProductCard = ({item}) => {
-
     const [hover,setHover] = useState(false)
 
     const {barcode,brand,categories,disc_percent,id,
         image,in_stock,is_best_seller,is_new,name,
         old_price,packaging,price,product_code,raiting,
         running_out,slug,volume,volume_unit,weight,weight_unit} = item
+
     return(
         <div 
         onMouseEnter={()=>setHover(true)}
         onMouseLeave={()=>setHover(false)}
-        key={id}
         className='w-[290px] h-[450px] cursor-pointer'>
             <div 
             style={hover?{height:"520px",zIndex:"2",backgroundColor:"white"}:{}}
