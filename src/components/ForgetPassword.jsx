@@ -8,6 +8,7 @@ function ForgotPassword() {
     e.preventDefault()
    
     console.log('Nömrə:', '+994' + phone)
+    
   }
 
   return (
