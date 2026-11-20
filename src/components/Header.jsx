@@ -35,7 +35,7 @@ function Header() {
           <nav>
             <ul>
               <li className='flex gap-[27px]'>
-                <Link to="/brands" className='text-[#FFFFFF] hover:text-white/70 transition-colors duration-200'>Brendlər</Link>
+                <Link to="/all-brends" className='text-[#FFFFFF] hover:text-white/70 transition-colors duration-200'>Brendlər</Link>
                 <Link to="/stores" className='text-[#FFFFFF] hover:text-white/70 transition-colors duration-200'>Filiallar</Link>
                 <Link to="/about" className='text-[#FFFFFF] hover:text-white/70 transition-colors duration-200'>Haqqımızda</Link>
                 <Link to="/blogs" className='text-[#FFFFFF] hover:text-white/70 transition-colors duration-200'>Bloq</Link>
@@ -60,9 +60,9 @@ function Header() {
             <ul>
               <li className='flex gap-[10px] text-[17px] whitespace-nowrap'>
                 <Link to="campaigns" className='flex gap-[6px] text-[#EA0B17] hover:text-[#EA0B17]/60 transition-colors duration-200 font-semibold tracking-wide'><RiDiscountPercentLine className='text-2xl' />Kampaniyalar</Link>
-                <Link to="best_seller" className='text-[#19191A] font-semibold hover:text-[#8C8C8C] transition-colors duration-200'>Bestseller</Link>
-                <Link to="discount" className='text-[#19191A] font-semibold hover:text-[#8C8C8C] transition-colors duration-200'>Endirim</Link>
-                <Link to="new" className='text-[#19191A] font-semibold hover:text-[#8C8C8C] transition-colors duration-200'>Yeni</Link>
+                <Link to="/best-seller" className='text-[#19191A] font-semibold hover:text-[#8C8C8C] transition-colors duration-200'>Bestseller</Link>
+                <Link to="/discount" className='text-[#19191A] font-semibold hover:text-[#8C8C8C] transition-colors duration-200'>Endirim</Link>
+                <Link to="/new" className='text-[#19191A] font-semibold hover:text-[#8C8C8C] transition-colors duration-200'>Yeni</Link>
                 <Link to="login" className='text-[#19191A] flex items-center font-normal transition-colors duration-200 pl-[9px] pr-[9px]'><LuUser className='w-[27px] h-[27px] stroke-[1.5]' /><span className='text-[15px] hover:text-[#ED1C24] transition-all duration-200'>Daxil ol</span></Link>
                 <Link to="wishlist" className='text-[#5E5E5E] flex items-center font-semibold pl-[9px] pr-[9px]'><AiOutlineHeart className='w-[25px] h-[25px] stroke-[1.3]' /></Link>
                 <Link to="cart" className='text-[#5E5E5E] flex items-center font-semibold'><TbShoppingBagPlus className='w-[25px] h-[25px] stroke-[1.7]' /></Link>
