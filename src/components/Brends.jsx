@@ -1,5 +1,5 @@
-
 import React, { useEffect, useRef } from 'react'
+import {Link} from "react-router-dom"
 
 function Brends() {
 
@@ -251,17 +251,19 @@ function Brends() {
 
 
   return (
-    <div className="w-full pt-[20px] pb-8 mt-[20px] bg-[#FAF9F9]">
+    <div className="pt-[20px] mt-[20px] pb-[40px] bg-[#FAF9F9]">
 
-      <div className="w-[1340px] mx-auto min-h-[400px] pt-[20px] pb-8 px-4">
+      <div className=" mx-auto pt-[20px] px-[150px]">
 
         <div className="flex items-center justify-between mb-5">
-          <h1 className="text-[36px] font-semibold text-black">
+          <h1 className="text-[32px] font-semibold text-black">
             Brendlər
           </h1>
-          <span className="text-[18px] font-bold text-[#19191A] cursor-pointer">
-            Hamısını göstər
-          </span>
+          <Link to={"/all-brends"}>
+            <span className="text-[18px] font-bold text-[#19191A] cursor-pointer">
+              Hamısını göstər
+            </span>
+          </Link>
         </div>
 
         <div

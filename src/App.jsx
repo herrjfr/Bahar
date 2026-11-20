@@ -6,6 +6,8 @@ import Campaigns from './components/Campaigns'
 import Login from './components/Login'
 import Wishlist from './components/Wishlist'
 import ShoppingCart from './components/ShoppingCart'
+import BrendsPage from './components/BrendsPage'
+import TopThree from './components/TopThree'
 
 function App() {
 
@@ -17,6 +19,10 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/wishlist' element={<Wishlist/>}/>
         <Route path='/cart' element={<ShoppingCart/>}/>
+        <Route path='/all-brends' element={<BrendsPage/>}/>
+        <Route path='/best-seller' element={<TopThree/>}/>
+        <Route path='/new' element={<TopThree/>}/>
+        <Route path='/discount' element={<TopThree/>}/>
       </Route>
     </Routes>
   )
