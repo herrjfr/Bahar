@@ -12,10 +12,6 @@ function BrendsPage() {
             {id : 4, img : "butun brendleri elave etdikden sonra mene de komek edecem"}
         ]
     }
-
-
-
-
   return (
     <div>BrendsPage</div>
   )

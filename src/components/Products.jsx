@@ -1,31 +1,25 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import ProductCard from './ProductCard'
 import { TiStarburst } from "react-icons/ti";
 import { TbAwardFilled } from "react-icons/tb";
 import { CiDiscount1 } from "react-icons/ci";
-import {useProducts} from "../context/ProductsData"
+import { ProductsContext } from '../context/ProductsContext';
 
 const Products = () => {
 
-  const { products } = useProducts();
+  const {products} = useContext(ProductsContext);
 
   const [bestSeller, setBestSeller] = useState([])
   const [newPrd, setNewPrd] = useState([])
   const [discount, setDiscount] = useState([])
-
-  const [newHover,setNewHover] = useState(false)
-  const [bestHover,setBestHover] = useState(false)
-  const [discHover,setDiscHover] = useState(false)
   
   const [select,setSelect] = useState(2)
-
-
 
   useEffect(() => {
     setBestSeller(products.filter(x => x.is_best_seller && x.name.length>30).slice(0, 16))
     setNewPrd(products.filter(x => x.is_new && x.name.length>30).slice(0, 16))
     setDiscount(products.filter(x => x.disc_percent && x.name.length>30).slice(0, 16))
-  }, [])
+  }, [products])
 
 
 
@@ -87,7 +81,7 @@ const Products = () => {
           return <ProductCard key={x.id} item={x}/>
         })}
       </div>
-      <button className='mt-[55px] mb-[30px] px-[40px] py-[10px] rounded-[10px] bg-black text-white text-[16px] font-[500] cursor-pointer hover:bg-black/70 transition-all duration-500'>Hamısını göstər</button>
+      <button className='mt-[55px] mb-[30px] px-[45px] pt-[10px] pb-[12px] rounded-[8px] bg-black text-white text-[16px] font-[500] cursor-pointer hover:bg-black/70 transition-all duration-500'>Hamısını göstər</button>
     </section>
   )
 }

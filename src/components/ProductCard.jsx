@@ -5,9 +5,13 @@ import { TiStarburst } from "react-icons/ti";
 import { IoMdTrendingDown } from "react-icons/io";
 import { AiOutlineHeart } from "react-icons/ai";
 import { TbShoppingBagPlus } from "react-icons/tb";
+import { useNavigate } from 'react-router-dom';
+
 
 const ProductCard = ({item}) => {
     const [hover,setHover] = useState(false)
+
+    const link = useNavigate()
 
     const {barcode,brand,categories,disc_percent,id,
         image,in_stock,is_best_seller,is_new,name,
@@ -16,6 +20,7 @@ const ProductCard = ({item}) => {
 
     return(
         <div 
+        onClick={()=>link(`/products/${id}`)}
         onMouseEnter={()=>setHover(true)}
         onMouseLeave={()=>setHover(false)}
         className='w-[290px] h-[450px] cursor-pointer'>

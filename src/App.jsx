@@ -10,6 +10,8 @@ import Registration from './components/Registration'
 import ForgetPassword from './components/ForgetPassword'
 import BrendsPage from './components/BrendsPage'
 import TopThree from './components/TopThree'
+import Products from './components/Products'
+import Details from './components/Details'
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         <Route path='/best-seller' element={<TopThree />} />
         <Route path='/new' element={<TopThree />} />
         <Route path='/discount' element={<TopThree />} />
+        <Route path='products/:ID' element={<Details/>}/>
       </Route>
     </Routes>
   )
