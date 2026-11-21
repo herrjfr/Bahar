@@ -1,33 +1,49 @@
-import React, { useState } from 'react'
+import { useState, useContext } from 'react'
 import { TbAwardFilled } from "react-icons/tb";
 import { PiSealPercentFill } from "react-icons/pi";
 import { TiStarburst } from "react-icons/ti";
 import { IoMdTrendingDown } from "react-icons/io";
 import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
 import { TbShoppingBagPlus } from "react-icons/tb";
+import { TbShoppingBag } from "react-icons/tb";
 import { useNavigate } from 'react-router-dom';
+import {ProductsContext} from "../context/ProductsContext"
 
 
 const ProductCard = ({item}) => {
-    const [hover,setHover] = useState(false)
 
     const link = useNavigate()
 
+    const [hover,setHover] = useState(false)
+
+    const { cart,
+            wishlist,
+            addCart,
+            removeCart,
+            addWishlist,
+            removeWishlist    
+    } = useContext(ProductsContext)
+
     const {barcode,brand,categories,disc_percent,id,
-        image,in_stock,is_best_seller,is_new,name,
-        old_price,packaging,price,product_code,raiting,
-        running_out,slug,volume,volume_unit,weight,weight_unit} = item
+    image,in_stock,is_best_seller,is_new,name,old_price,
+    packaging,price,product_code,raiting,running_out,slug,
+    volume,volume_unit,weight,weight_unit} = item
+
+    const inWishlist = wishlist.includes(id)
+    const inCart = cart.some(x=>x.id==id)
 
     return(
         <div 
-        onClick={()=>link(`/products/${id}`)}
         onMouseEnter={()=>setHover(true)}
         onMouseLeave={()=>setHover(false)}
         className='w-[290px] h-[450px] cursor-pointer'>
             <div 
             style={hover?{height:"520px",zIndex:"2",backgroundColor:"white"}:{}}
             className='w-[290px] h-[450px] border-1 border-[gray]/30 rounded-[20px] flex flex-col items-start px-[20px] py-[10px] relative'>
-                <div className='forImg self-center w-[250px] h-[250px] rounded-[10px] overflow-hidden flex justify-center items-center relative'>
+                <div 
+                onClick={()=>link(`/products/${id}`)}
+                className='forImg self-center w-[250px] h-[250px] rounded-[10px] overflow-hidden flex justify-center items-center relative'>
                     <img
                     draggable={false} 
                     style={hover?{scale:"1.2"}:{}}
@@ -66,12 +82,29 @@ const ProductCard = ({item}) => {
                 </div>
                 {hover && 
                     <div className='w-[100%] pt-[30px] flex justify-between'>
-                        <button className='w-[65px] h-[50px] rounded-[5px] border-[gray]/50 border-1 flex justify-center items-center cursor-pointer'>
-                            <AiOutlineHeart className='text-[25px] text-[gray]'/>
+                        <button 
+                        onClick={()=>inWishlist?removeWishlist(id):addWishlist(id)}
+                        className='w-[65px] h-[50px] rounded-[5px] border-[gray]/50 border-1 flex justify-center items-center cursor-pointer transition-all duration-500'>{inWishlist?
+                        <AiFillHeart className='text-[25px] text-[red]'/>:
+                        <AiOutlineHeart className='text-[25px] text-[gray]'/>}
                         </button>
-                        <button className='bg-[black] w-[175px] h-[50px] rounded-[5px] text-[white] cursor-pointer flex items-center justify-center gap-x-[10px]'>
+                        <button 
+                        onClick={()=>inCart?removeCart(id):addCart(id)}
+                        style={inCart?
+                            {backgroundColor:"white",
+                            color: "#2D9D3F",
+                            border: "solid 1px black"
+                            }:{}}
+                        className='bg-[black] w-[175px] h-[50px] rounded-[5px] text-[white] cursor-pointer flex items-center justify-center gap-x-[10px] transition-all duration-700'>
+                            {inCart?
+                            <>
+                            <TbShoppingBag className='text-[25px] text-[green]'/>
+                            <span className='font-[600] text-[16px]'>Əlavə olundu</span>
+                            </>:
+                            <>
                             <TbShoppingBagPlus className='text-[25px] text-[gray]'/>
-                            <p className='font-[600] text-[16px]'>Səbətə at</p>
+                            <span className='font-[600] text-[16px]'>Səbətə at</span>
+                            </>}
                         </button>
                     </div>}
             </div>

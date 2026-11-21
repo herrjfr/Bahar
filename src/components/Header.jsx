@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import baharstore from '../assets/baharstore.png'
 import { Link } from 'react-router-dom'
 import { CiSearch } from "react-icons/ci";
@@ -8,8 +8,13 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { LuUser } from "react-icons/lu";
 import { TbShoppingBagPlus } from "react-icons/tb";
 import { useState, useEffect } from 'react'
+import { ProductsContext } from '../context/ProductsContext';
 
 function Header() {
+
+  const {cart} = useContext(ProductsContext)
+
+
   const [lang, setLang] = useState('AZ')
   const toggleLanguage = () => {
     setLang(lang === 'AZ' ? 'RU' : 'AZ')
@@ -65,7 +70,13 @@ function Header() {
                 <Link to="/new" className='text-[#19191A] font-semibold hover:text-[#8C8C8C] transition-colors duration-200'>Yeni</Link>
                 <Link to="login" className='text-[#19191A] flex items-center font-normal transition-colors duration-200 pl-[9px] pr-[9px]'><LuUser className='w-[27px] h-[27px] stroke-[1.5]' /><span className='text-[15px] hover:text-[#ED1C24] transition-all duration-200'>Daxil ol</span></Link>
                 <Link to="wishlist" className='text-[#5E5E5E] flex items-center font-semibold pl-[9px] pr-[9px]'><AiOutlineHeart className='w-[25px] h-[25px] stroke-[1.3]' /></Link>
-                <Link to="cart" className='text-[#5E5E5E] flex items-center font-semibold'><TbShoppingBagPlus className='w-[25px] h-[25px] stroke-[1.7]' /></Link>
+                <Link to="cart" className='text-[#5E5E5E] flex items-center font-semibold relative'>
+                <TbShoppingBagPlus className='w-[25px] h-[25px] stroke-[1.7]'/>
+                {cart.length>0 &&
+                <span className='w-[18px] h-[18px] rounded-2xl bg-[red] absolute top-[-10px] right-[-15px] flex justify-center items-center'>
+                  <span className='text-[10px] text-white'>{cart.length}</span>
+                </span>}
+                </Link>
               </li>
             </ul>
           </nav>
