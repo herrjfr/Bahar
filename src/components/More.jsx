@@ -12,6 +12,7 @@ import img9 from '../assets/img9.png'
 import img10 from '../assets/img10.png'
 import img11 from '../assets/img11.png'
 import img12 from '../assets/img12.png'
+import { Link } from 'react-router-dom'
 
 const cards = [
   { id: 1, image: img1, title: 'Üzə Qulluq: Hər Mövsümə Uyğun Məsləhətlər' },
@@ -63,9 +64,12 @@ function More() {
             <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">YEGANƏ</li>
             <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">ÜNVANI!</li>
           </ul>
-          <a href="#" className="w-[50px] text-[18px] leading-[19px] font-medium text-white">
-            Daha çoxuna baxın
-          </a>
+          <Link to={"/blogs"}>
+            <p className="w-[50px] text-[18px] leading-[19px] font-medium text-white">
+              Daha çoxuna baxın
+            </p>
+          </Link>
+
         </div>
 
         {/* Sağ hissə: slayd */}
@@ -76,9 +80,8 @@ function More() {
             onMouseUp={stopDrag}
             onMouseLeave={stopDrag}
             onMouseMove={onMouseMove}
-            className={`flex gap-[20px] h-full overflow-x-auto select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
-              isDragging ? 'cursor-grabbing' : 'cursor-grab'
-            }`}
+            className={`flex gap-[20px] h-full overflow-x-auto select-none [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${isDragging ? 'cursor-grabbing' : 'cursor-grab'
+              }`}
           >
             {cards.map((card) => (
               <div
