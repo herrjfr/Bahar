@@ -1,4 +1,3 @@
-import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
@@ -10,8 +9,8 @@ import Registration from './components/Registration'
 import ForgetPassword from './components/ForgetPassword'
 import BrendsPage from './components/BrendsPage'
 import TopThree from './components/TopThree'
-import Products from './components/Products'
 import Details from './components/Details'
+import Blogs from './components/Blogs'
 
 function App() {
   return (
@@ -28,6 +27,7 @@ function App() {
         <Route path='/best-seller' element={<TopThree />} />
         <Route path='/new' element={<TopThree />} />
         <Route path='/discount' element={<TopThree />} />
+        <Route path='/blogs' element={<Blogs/>}/>
         <Route path='products/:ID' element={<Details/>}/>
       </Route>
     </Routes>
