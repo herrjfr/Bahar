@@ -90,19 +90,6 @@ function Header() {
               </li>
               <li className='group'>
                 <Link to="hediyyeler" className='text-[#19191A]/90 inline-block px-3 py-1.5 rounded-full hover:bg-[#ED1C24] hover:text-white transition-all duration-200'>Hədiyyələr</Link>
-                <div className="hidden group-hover:grid absolute left-0 top-full w-full bg-white text-black shadow-lg border-b border-gray-100 z-50 px-[150px] pt-8 pb-10 grid-cols-12 gap-12">
-                  <div className="col-span-4 flex gap-5 justify-start items-center text-left font-normal text-[15px] text-gray-700">
-                    <Link to="hediyye-sertifikatlari" className="hover:text-[#ED1C24] transition-colors">
-                      Hədiyyə sertifikatları
-                    </Link>
-                    <Link to="hediyye-destleri" className="hover:text-[#ED1C24] transition-colors">
-                      Hədiyyə dəstləri
-                    </Link>
-                    <Link to="hediyye-cantalari" className="hover:text-[#ED1C24] transition-colors">
-                      Hədiyyə çantaları
-                    </Link>
-                  </div>
-                </div>
               </li>
               <li className='group'>
                 <Link to="makiyaj" className='text-[#19191A]/90 inline-block px-3 py-1.5 rounded-full hover:bg-[#ED1C24] hover:text-white transition-all duration-200'>Makiyaj</Link>

@@ -20,43 +20,43 @@ function Campaigns() {
           </div>
 
           <div className="card w-[100%] h-[1100px] flex justify-between flex-wrap">
-            <div className="card1 w-[290px] h-[500px] rounded-t-[15px] bg-[#FAFAFA] flex flex-col gap-[15px]">
-              <div className="h-[350px]"><img className='h-[350px] rounded-t-[15px]' src={kampaniyaa1} alt="sekil" /></div>
-              <div className="yu h-[150px] flex flex-col gap-[40px] pl-[20px]">
-                <h3 className='font-medium'>Yeni ilə özəl endirim!</h3>
-                <p className='text-[#4B4B4B]'>əldə yoxdur</p>
+            <div className="card1 w-[290px] h-[500px] rounded-[15px] bg-[#FAFAFA] flex flex-col gap-[20px]">
+              <div className="h-[350px]"><img className='h-[350px] rounded-[15px]' src={kampaniyaa1} alt="sekil" /></div>
+              <div className="yu h-[150px] flex flex-col gap-[55px] pl-[20px]">
+                <h3 className='font-medium text-[14px]'>Yeni ilə özəl endirim!</h3>
+                <p className='text-[#4B4B4B] text-[14px]'>əldə yoxdur</p>
               </div>
             </div>
 
-            <div className="card1 w-[290px] h-[500px] rounded-t-[15px] bg-[#FAFAFA] flex flex-col gap-[15px]">
-              <div className="h-[350px]"><img className='h-[350px] rounded-t-[15px]' src={kampaniyaa2} alt="sekil" /></div>
-              <div className="yu h-[150px] flex flex-col gap-[40px] pl-[20px]">
-                <h3 className='font-medium'>8 Marta özəl 10% endirim.</h3>
-                <p className='text-[#4B4B4B]'>əldə yoxdur</p>
+            <div className="card1 w-[290px] h-[500px] rounded-[15px] bg-[#FAFAFA] flex flex-col gap-[20px]">
+              <div className="h-[350px]"><img className='h-[350px] rounded-[15px]' src={kampaniyaa2} alt="sekil" /></div>
+              <div className="yu h-[150px] flex flex-col gap-[55px] pl-[20px]">
+                <h3 className='font-medium text-[14px]'>8 Marta özəl 10% endirim.</h3>
+                <p className='text-[#4B4B4B] text-[14px]'>əldə yoxdur</p>
               </div>
             </div>
 
-            <div className="card1 w-[290px] h-[500px] rounded-t-[15px] bg-[#FAFAFA] flex flex-col gap-[15px]">
-              <div className="h-[350px]"><img className='h-[350px] rounded-t-[15px]' src={kampaniyaa3} alt="sekil" /></div>
-              <div className="yu h-[150px] flex flex-col gap-[40px] pl-[20px]">
-                <h3 className='font-medium'>Black Friday</h3>
-                <p className='text-[#4B4B4B]'>əldə yoxdur</p>
+            <div className="card1 w-[290px] h-[500px] rounded-[15px] bg-[#FAFAFA] flex flex-col gap-[20px]">
+              <div className="h-[350px]"><img className='h-[350px] rounded-[15px]' src={kampaniyaa3} alt="sekil" /></div>
+              <div className="yu h-[150px] flex flex-col gap-[55px] pl-[20px]">
+                <h3 className='font-medium text-[14px]'>Black Friday</h3>
+                <p className='text-[#4B4B4B] text-[14px]'>əldə yoxdur</p>
               </div>
             </div>
 
-            <div className="card1 w-[290px] h-[500px] rounded-t-[15px] bg-[#FAFAFA] flex flex-col gap-[15px]">
-              <div className="h-[350px]"><img className='h-[350px] rounded-t-[15px]' src={kampaniyaa4} alt="sekil" /></div>
-              <div className="yu h-[150px] flex flex-col gap-[40px] pl-[20px]">
-                <h3 className='font-medium'>6 il sizinlə</h3>
-                <p className='text-[#4B4B4B]'>əldə yoxdur</p>
+            <div className="card1 w-[290px] h-[500px] rounded-[15px] bg-[#FAFAFA] flex flex-col gap-[20px]">
+              <div className="h-[350px]"><img className='h-[350px] rounded-[15px]' src={kampaniyaa4} alt="sekil" /></div>
+              <div className="yu h-[150px] flex flex-col gap-[55px] pl-[20px]">
+                <h3 className='font-medium text-[14px]'>6 il sizinlə</h3>
+                <p className='text-[#4B4B4B] text-[14px]'>əldə yoxdur</p>
               </div>
             </div>
 
-            <div className="card1 w-[290px] h-[500px] rounded-t-[15px] bg-[#FAFAFA] flex flex-col gap-[15px]">
-              <div className="h-[350px]"><img className='h-[350px] rounded-t-[15px]' src={kampaniyaa5} alt="sekil" /></div>
-              <div className="yu h-[150px] flex flex-col gap-[40px] pl-[20px]">
-                <h3 className='font-medium'>Baku Shopping Festival</h3>
-                <p className='text-[#4B4B4B]'>əldə yoxdur</p>
+            <div className="card1 w-[290px] h-[500px] rounded-[15px] bg-[#FAFAFA] flex flex-col gap-[20px]">
+              <div className="h-[350px]"><img className='h-[350px] rounded-[15px]' src={kampaniyaa5} alt="sekil" /></div>
+              <div className="yu h-[150px] flex flex-col gap-[55px] pl-[20px]">
+                <h3 className='font-medium text-[14px]'>Baku Shopping Festival</h3>
+                <p className='text-[#4B4B4B] text-[14px]'>əldə yoxdur</p>
               </div>
             </div>
 
