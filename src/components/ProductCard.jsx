@@ -37,13 +37,13 @@ const ProductCard = ({item}) => {
         <div 
         onMouseEnter={()=>setHover(true)}
         onMouseLeave={()=>setHover(false)}
-        className='w-[290px] h-[450px] cursor-pointer'>
+        className='w-[290px] h-[450px]'>
             <div 
             style={hover?{height:"520px",zIndex:"2",backgroundColor:"white"}:{}}
             className='w-[290px] h-[450px] border-1 border-[gray]/30 rounded-[20px] flex flex-col items-start px-[20px] py-[10px] relative'>
                 <div 
                 onClick={()=>link(`/products/${id}`)}
-                className='forImg self-center w-[250px] h-[250px] rounded-[10px] overflow-hidden flex justify-center items-center relative'>
+                className='forImg self-center w-[250px] h-[250px] rounded-[10px] overflow-hidden flex justify-center items-center relative cursor-pointer'>
                     <img
                     draggable={false} 
                     style={hover?{scale:"1.2"}:{}}
