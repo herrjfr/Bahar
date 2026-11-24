@@ -11,12 +11,14 @@ import BrendsPage from './components/BrendsPage'
 import TopThree from './components/TopThree'
 import Details from './components/Details'
 import Blogs from './components/Blogs'
+import About from './pages/About'
 
 function App() {
   return (
     <Routes>
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
+        <Route path='/about' element={<About/>}/>
         <Route path='/campaigns' element={<Campaigns />} />
         <Route path='/login' element={<Login />} />
         <Route path='/registration' element={<Registration />} />
