@@ -61,13 +61,13 @@ function Haqqimizda() {
       <div className='width-[100%] h-[900px] flex flex-col justify-evenly items-center'>
         <div className="w-[80%] h-[250px] mb-[90px] flex flex-col items-end">
           <div className="w-[50%] mr-[-60px] flex flex-col gap-5">
-            <h1 className="text-[29px] font-semibold text-black">
+            <h1 className="text-[25px] font-semibold text-black">
               TARİXİMİZ
             </h1>
 
-            <div className="flex flex-col gap-6 text-[22px] leading-[34px] text-[#444444]">
+            <div className="flex flex-col gap-6 text-[19px] w-[560px] leading-[34px] text-[#444444]">
               <p>
-                <span className="font-bold">Bahar Store</span> şirkəti 2017-ci ildə Azərbaycanda yaradılmış və qısa zamanda innovativ "Drogerie" formatının uğurlu nümunəsinə çevrilmişdir. Avropada geniş yayılan bu format, Azərbaycanda müştərilərin alış-veriş ehtiyaclarını daha müasir, rahat və fərqli bir şəkildə qarşılamaq məqsədilə tətbiq edilmişdir.
+                <span className="font-bold">Bahar Store şirkəti</span>  2017-ci ildə Azərbaycanda yaradılmış və qısa zamanda innovativ "Drogerie" formatının uğurlu nümunəsinə çevrilmişdir. Avropada geniş yayılan bu format, Azərbaycanda müştərilərin alış-veriş ehtiyaclarını daha müasir, rahat və fərqli bir şəkildə qarşılamaq məqsədilə tətbiq edilmişdir.
               </p>
 
               <p>
@@ -79,23 +79,23 @@ function Haqqimizda() {
 
         <div className="w-full flex justify-evenly items-center">
           <div className="flex flex-col items-center gap-4">
-            <span className="text-[20px] text-black">Məhsul</span>
-            <span className="text-[90px] font-bold text-[#F4858B] leading-none">8319</span>
+            <span className="text-[18px] text-black">Məhsul</span>
+            <span className="text-[70px] font-bold text-[#F4858B] leading-none">8319</span>
           </div>
 
           <div className="flex flex-col items-center gap-4">
-            <span className="text-[20px] text-black">Brend</span>
-            <span className="text-[90px] font-bold text-[#F4858B] leading-none">147</span>
+            <span className="text-[18px] text-black">Brend</span>
+            <span className="text-[70px] font-bold text-[#F4858B] leading-none">147</span>
           </div>
 
           <div className="flex flex-col items-center gap-4">
-            <span className="text-[20px] text-black">Filial</span>
-            <span className="text-[90px] font-bold text-[#F4858B] leading-none">10</span>
+            <span className="text-[18px] text-black">Filial</span>
+            <span className="text-[70px] font-bold text-[#F4858B] leading-none">10</span>
           </div>
 
           <div className="flex flex-col items-center gap-4">
-            <span className="text-[20px] text-black">Əməkdaş</span>
-            <span className="text-[90px] font-bold text-[#F4858B] leading-none">159</span>
+            <span className="text-[18px] text-black">Əməkdaş</span>
+            <span className="text-[70px] font-bold text-[#F4858B] leading-none">159</span>
           </div>
         </div>
 
