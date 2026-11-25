@@ -379,8 +379,8 @@ function TopThree() {
                   {sortOptions.map((option) => (
                     <button
                       key={option}
-                      onClick={() => setActiveSort(option)}
-                      className={`px-4 py-1.5 rounded-md border transition-all text-sm font-medium whitespace-nowrap
+                      onClick={() => setActiveSort(activeSort === option ? null : option)}
+                      className={`px-4 py-1.5 rounded-md border transition-all text-sm font-medium whitespace-nowrap cursor-pointer
               ${activeSort === option
                           ? 'border-[#8C8C8D] border-solid bg-white text-gray-900 shadow-sm'
                           : ' text-gray-500 border-[#EAE1E1]'
