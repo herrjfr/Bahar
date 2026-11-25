@@ -4,6 +4,7 @@ import { TiStarburst } from "react-icons/ti";
 import { TbAwardFilled } from "react-icons/tb";
 import { CiDiscount1 } from "react-icons/ci";
 import { ProductsContext } from '../context/ProductsContext';
+import { Link } from 'react-router-dom';
 
 const Products = () => {
 
@@ -27,7 +28,9 @@ const Products = () => {
     <section className='px-[150px] pt-[90px] flex flex-col items-center'>
       <div className='flex w-[440px] justify-between items-center text-[20px] font-[600] text-[gray]/50 pb-[20px]'>
         <div
-        onClick={()=>setSelect(1)}
+        onClick={()=>{
+          setSelect(1)
+        }}
         className='flex gap-x-[8px] items-center hover:text-black/70 cursor-pointer'>
           <TiStarburst 
           style={select==1?{color:"red"}:{}}
@@ -42,7 +45,9 @@ const Products = () => {
         <span className='w-[2px] bg-[gray]/50 h-[20px]'></span>
 
         <div 
-        onClick={()=>setSelect(2)}
+        onClick={()=>{
+          setSelect(2)
+        }}
         className='flex gap-x-[8px] items-center hover:text-black/70 cursor-pointer'>
           <TbAwardFilled 
           style={select==2?{color:"red"}:{}}
@@ -57,7 +62,9 @@ const Products = () => {
         <span className='w-[2px] bg-[gray]/50 h-[20px]'></span>
 
         <div 
-        onClick={()=>setSelect(3)}
+        onClick={()=>{
+          setSelect(3)
+        }}
         className='flex gap-x-[8px] items-center hover:text-black/70 cursor-pointer'>
           <CiDiscount1 
           style={select==3?{color:"red"}:{}}
@@ -81,7 +88,12 @@ const Products = () => {
           return <ProductCard key={x.id} item={x}/>
         })}
       </div>
-      <button className='mt-[55px] mb-[30px] px-[45px] pt-[10px] pb-[12px] rounded-[8px] bg-black text-white text-[16px] font-[500] cursor-pointer hover:bg-black/70 transition-all duration-500'>Hamısını göstər</button>
+      {select==1 &&
+      <Link to={"/new"} className='mt-[55px] mb-[30px] px-[45px] pt-[10px] pb-[12px] rounded-[8px] bg-black text-white text-[16px] font-[500] cursor-pointer hover:bg-black/70 transition-all duration-500'>Hamısını göstər</Link>}
+      {select==2 &&
+      <Link to={"/best-seller"} className='mt-[55px] mb-[30px] px-[45px] pt-[10px] pb-[12px] rounded-[8px] bg-black text-white text-[16px] font-[500] cursor-pointer hover:bg-black/70 transition-all duration-500'>Hamısını göstər</Link>}
+      {select==3 &&
+      <Link to={"/discount"} className='mt-[55px] mb-[30px] px-[45px] pt-[10px] pb-[12px] rounded-[8px] bg-black text-white text-[16px] font-[500] cursor-pointer hover:bg-black/70 transition-all duration-500'>Hamısını göstər</Link>}
     </section>
   )
 }
