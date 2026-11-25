@@ -1,9 +1,57 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { CgMenuRightAlt } from "react-icons/cg";
 import { CiSearch } from "react-icons/ci";
 import { useState } from 'react'
+import { ProductsContext } from '../context/ProductsContext';
+import { useLocation } from 'react-router-dom';
+import ProductCard from './ProductCard';
 
 function TopThree() {
+
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
+
+  const location = useLocation()
+  const type = location.pathname
+
+  const { products } = useContext(ProductsContext)
+
+  const f_best = products.filter(x => x.is_best_seller == 1)
+  let best
+  if(f_best.length>=90){
+    best=f_best.slice(0,90)
+  }else{
+    best = f_best.slice(0, f_best.length - (f_best.length % 3))
+  }
+
+  const f_new = products.filter(x => x.is_new == 1)
+  let neww
+  if(f_new.length>=90){
+    neww = f_new.slice(0,90)
+  }else{
+    neww = f_new.slice(0, f_new.length - (f_new.length % 3))
+  }
+
+  const f_disc = products.filter(x => x.disc_percent > 0)
+  let disc
+  if(f_disc.length>=90){
+    disc = f_disc.slice(0,90)
+  }else{
+    disc = f_disc.slice(0, f_disc.length - (f_disc.length % 3))
+  }
+
+  let prod = []
+
+  if (type === '/best-seller') {
+    prod = best
+  } else if (type === '/new') {
+    prod = neww
+  } else if (type === '/discount') {
+    prod = disc
+  }
+
+
   const [isOpen, setisOpen] = useState(false)
   const [isOpenqiy, setisOpenqiy] = useState(false)
   const [minQiymet, setminQiymet] = useState(1)
@@ -53,15 +101,16 @@ function TopThree() {
 
   return (
     <>
-      <div className="w-[100%] min-h-[1600px] max-h-auto px-[150px]">
+      <div className="w-[100%] min-h-[1600px] max-h-auto px-[150px] pb-[150px]">
         <div className="w-[100%] min-h-[1600px] max-h-auto flex flex-col gap-[60px]">
-          <div className="biir w-[100%] h-[80px] flex flex-col items-center">
+          <div className="biir w-[100%] h-[80px] flex flex-col items-center relative">
+            <p className='absolute top-[20px] right-0 text-[14px] text-[gray]'>{prod.length} Məhsul</p>
             <h1 className='text-[26px] font-semibold font-[Inter,sans-serif] text-[#1a1a1a]'>Bahar Store</h1>
             <p className='text-[13px] font-normal text-[#B3B3B4]'>Bahar Store</p>
           </div>
 
           <div className="ikki w-[100%] min-h-[1600px] max-h-auto flex justify-between">
-            <div className="r w-[25%] min-h-[1450px] max-h-auto">
+            <div className="r w-[23%] min-h-[1450px] max-h-auto">
               <div className="flex items-center gap-2 text-3xl font-medium py-[15px] border-b border-solid border-[#e0e0e0] text-gray-800">
                 <span className='text-red-500'><CgMenuRightAlt /></span>
                 <span>Filtr</span>
@@ -372,8 +421,8 @@ function TopThree() {
               </div>
             </div>
 
-            <div className="l w-[73%] min-h-[50px] flex flex-col gap-6">
-              <div className="flex gap-4 w-[100%] text-sm text-gray-700">
+            <div className="l w-[75%] min-h-[50px] flex flex-col gap-6">
+              <div className="flex gap-4 w-[100%] text-sm  text-gray-700">
                 <span className="text-[#7F7F7F] text-base font-medium pt-[3px]">Sırala</span>
                 <div className="flex gap-3">
                   {sortOptions.map((option) => (
@@ -392,11 +441,12 @@ function TopThree() {
                 </div>
               </div>
 
-
-
-
-               {/* KARTLAR HISSESI */}
-              <div className="w-full h-[400px] bg-green-200"></div>
+              {/* KARTLAR HISSESI */}
+              <div className="flex justify-between flex-wrap gap-y-[30px]">
+                {prod.map(item => {
+                  return <ProductCard key={item.id} item={item} />
+                })}
+              </div>
             </div>
           </div>
         </div>
