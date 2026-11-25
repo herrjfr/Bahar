@@ -88,6 +88,9 @@ const ProductCard = ({item}) => {
                         <AiFillHeart className='text-[25px] text-[red]'/>:
                         <AiOutlineHeart className='text-[25px] text-[gray]'/>}
                         </button>
+                        {in_stock==0? 
+                        <button className='border-1 border-[red] w-[175px] h-[50px] rounded-[5px] text-[red] flex items-center justify-center gap-x-[10px] transition-all duration-700 font-[600]'><span>Stokda yoxdur</span></button>
+                        :
                         <button 
                         onClick={()=>inCart?removeCart(id):addCart(id)}
                         style={inCart?
@@ -105,7 +108,7 @@ const ProductCard = ({item}) => {
                             <TbShoppingBagPlus className='text-[25px] text-[gray]'/>
                             <span className='font-[600] text-[16px]'>Səbətə at</span>
                             </>}
-                        </button>
+                        </button>}
                     </div>}
             </div>
         </div>
