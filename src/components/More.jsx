@@ -53,26 +53,22 @@ function More() {
     <section className="w-full h-[540px] bg-[#1a1a1a] flex items-center overflow-hidden font-[Inter,sans-serif]">
       <main className="w-full justify-center flex">
         {/* Sol hissə */}
-        <div className="w-[350px] h-[200px] shrink-0 flex flex-col justify-between gap-3">
+        <div className="w-[350px] h-[200px] shrink-0 flex flex-col justify-between gap-18">
           <ul className="flex flex-col text-start">
-            <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">BAHAR</li>
-            <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">MAĞAZASI:</li>
-            <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">YÜKSƏK</li>
+            <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">BAHAR STORE:</li>
             <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">KEYFİYYƏTLİ</li>
-            <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">KOSMETİK</li>
+            <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">GÖZƏLLİK</li>
+            <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">BAXIM</li>
             <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">MƏHSULLARININ</li>
-            <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">YEGANƏ</li>
-            <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">ÜNVANI!</li>
+            <li className="text-[25px] leading-[35px] font-bold text-[#4d4d4d]">TƏK ÜNVANI!</li>
           </ul>
-          <Link to={"/blogs"}>
-            <p className="w-[50px] text-[18px] leading-[19px] font-medium text-white">
-              Daha çoxuna baxın
+          <Link to="/blogs" className="w-[70px] cursor-pointer">
+            <p className="w-[70px] text-[18px] leading-[19px] font-medium text-white  cursor-pointer ">
+              Hamısını göstər
             </p>
           </Link>
-
         </div>
-
-        {/* Sağ hissə: slayd */}
+        {/* Sağ  slayd */}
         <div className="w-[880px] h-[326px] flex justify-center items-center">
           <div
             ref={sliderRef}
