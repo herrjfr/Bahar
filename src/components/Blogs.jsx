@@ -24,15 +24,15 @@ const posts = [
   { id: 1, image: img1, category: 'blog', date: '28/01/2026', title: '✨ Clean Girl Makeup: baharstore.az məhsulları ilə trend makiyajı necə etməli' },
   { id: 2, image: img2, category: 'blog', date: '17/12/2025', title: 'Qış dəri baxımı: soyuq havada dəriyə nə lazımdır' },
   { id: 3, image: img3, category: 'news', date: '04/09/2025', title: 'Makiyajın bütün gün davamlı qalmasını necə təmin etməli' },
-  { id: 4, image: img4, category: 'other', date: '31/07/2025', title: 'Niyə təbii dezodorant seçməli və niyə məhz Salt of the Earth məsləhət görürük...' },
-  { id: 5, image: img5, category: 'other', date: '15/06/2025', title: 'Dəri tipinə uyğun ideal qulluq necə seçilməlidir?' },
-  { id: 6, image: img6, category: 'other', date: '02/06/2025', title: 'Günəşdən dəriyə effektiv qoruma üçün TOP-5 vasitə — günəşdən qoruyucu kremlər' },
-  { id: 7, image: img7, category: 'other', date: '20/05/2025', title: 'Koreya dəriyə qulluq nədir və niyə bu qədər populyardır?' },
-  { id: 8, image: img8, category: 'other', date: '11/05/2025', title: 'Qadınlar üçün Parfüm Seçimi: Şəxsi Üslubunuza Uyğun Ətir' },
-  { id: 9, image: img9, category: 'other', date: '25/04/2025', title: 'Hialuron turşusu nədir və dəriyə necə təsir edir?' },
-  { id: 10, image: img10, category: 'other', date: '12/04/2025', title: 'Qış mövsümündə dərini qurumaqdan necə qorumalı' },
-  { id: 11, image: img11, category: 'other', date: '30/03/2025', title: 'Seramlər: hansı dəri problemi üçün hansı serum' },
-  { id: 12, image: img12, category: 'other', date: '14/03/2025', title: 'Gecə baxımı: yatmazdan əvvəl nə etməli?' },
+  { id: 4, image: img4, category: 'blog', date: '31/07/2025', title: 'Niyə təbii dezodorant seçməli və niyə məhz Salt of the Earth məsləhət görürük...' },
+  { id: 5, image: img5, category: 'blog', date: '15/06/2025', title: 'Dəri tipinə uyğun ideal qulluq necə seçilməlidir?' },
+  { id: 6, image: img6, category: 'blog', date: '02/06/2025', title: 'Günəşdən dəriyə effektiv qoruma üçün TOP-5 vasitə — günəşdən qoruyucu kremlər' },
+  { id: 7, image: img7, category: 'blog', date: '20/05/2025', title: 'Koreya dəriyə qulluq nədir və niyə bu qədər populyardır?' },
+  { id: 8, image: img8, category: 'blog', date: '11/05/2025', title: 'Qadınlar üçün Parfüm Seçimi: Şəxsi Üslubunuza Uyğun Ətir' },
+  { id: 9, image: img9, category: 'blog', date: '25/04/2025', title: 'Hialuron turşusu nədir və dəriyə necə təsir edir?' },
+  { id: 10, image: img10, category: 'blog', date: '12/04/2025', title: 'Qış mövsümündə dərini qurumaqdan necə qorumalı' },
+  { id: 11, image: img11, category: 'blog', date: '30/03/2025', title: 'Seramlər: hansı dəri problemi üçün hansı serum' },
+  { id: 12, image: img12, category: 'blog', date: '14/03/2025', title: 'Gecə baxımı: yatmazdan əvvəl nə etməli?' },
 ]
 
 function Blog() {
@@ -44,35 +44,35 @@ function Blog() {
     <section className="w-full bg-white flex flex-col items-center gap-[30px] font-[Inter,sans-serif]">
       {/* Baslıq */}
       <div className="w-full h-[90px] flex flex-col items-center justify-center gap-[6px]">
-        <h1 className="text-[24px] leading-[28px] font-bold text-[#1a1a1a]">Blog</h1>
+        <h1 className="text-[24px] leading-[28px] font-bold text-[#1a1a1a]">Bloq</h1>
         <div className="flex items-center gap-[10px]">
           <span className="text-[12px] font-medium text-black">Bahar Store</span>
           <span className="text-[13px] text-gray-600">/</span>
-          <span className="text-[12px] text-gray-400">Blog</span>
+          <span className="text-[12px] text-gray-400">Bloq</span>
         </div>
       </div>
 
       <main className="w-[1224px] h-[1700px] flex flex-col gap-[25px]">
-        <h2 className="text-[30px] leading-[34px] font-bold text-[#1a1a1a] uppercase">Blog</h2>
+        <h2 className="text-[30px] leading-[34px] font-bold text-[#1a1a1a] uppercase">Bloq</h2>
 
-        {/* Filtrlər */}
-        <div className="w-full flex items-end justify-between">
-          <div className="flex items-center gap-[17px]">
-            {filters.map((item) => (
-              <button
-                key={item.key}
-                onClick={() => setActive(item.key)}
-                className={`${item.width} h-[35px] rounded-full text-[14px] font-medium border ${active === item.key
-                  ? 'bg-[#e8000d] border-[#e8000d] text-white'
-                  : 'bg-white border-gray-200 text-[#1a1a1a]'
-                  }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
-          <span className="text-[15px] font-medium text-gray-400">{filtered.length} Blog</span>
-        </div>
+      {/* Filtrlər */}
+<div className="w-full flex items-end justify-between">
+  <div className="flex items-center gap-[17px]">
+    {filters.map((item) => (
+      <button
+        key={item.key}
+        onClick={() => setActive(item.key)}
+        className={`${item.width} h-[35px] rounded-full text-[14px] font-medium border cursor-pointer  ${active === item.key
+          ? 'bg-[#e8000d] border-[#e8000d] text-white'
+          : 'bg-white border-gray-200 text-[#1a1a1a] hover:bg-[#e8000d] hover:border-[#e8000d] hover:text-white'
+          }`}
+      >
+        {item.label}
+      </button>
+    ))}
+  </div>
+  <span className="text-[15px] font-medium text-gray-400">{filtered.length} Blog</span>
+</div>
 
         {/* Kartlar */}
         <div className="w-full flex flex-wrap gap-4.5">
