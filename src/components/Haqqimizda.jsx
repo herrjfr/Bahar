@@ -25,27 +25,27 @@ function Haqqimizda() {
             </span>
           </div>
         </div>
-        <div className="w-[90%] h-[900px] flex justify-evenly">
+        <div className="w-[85%] h-[900px] flex justify-evenly"> 
           <img
-            className="w-[345px] h-[435px] -translate-y-[35px]"
+            className="w-[280px] h-[370px] -translate-y-[35px]"
             src="https://admin475.baharstore.az/storage//uploads/images/about/img-6675a61b60628.png"
             alt=""
           />
 
           <img
-            className="w-[345px] h-[435px]"
+            className="w-[280px] h-[370px]"
             src="https://admin475.baharstore.az/storage//uploads/images/about/img-6675a61b60b0f.png"
             alt=""
           />
 
           <img
-            className="w-[345px] h-[435px] -translate-y-[35px]"
+            className="w-[280px] h-[370px] -translate-y-[35px]"
             src="https://admin475.baharstore.az/storage//uploads/images/about/img-6675a61b60ef7.png"
             alt=""
           />
 
           <img
-            className="w-[345px] h-[435px]"
+            className="w-[280px] h-[370px]"
             src="https://admin475.baharstore.az/storage//uploads/images/about/img-6675a61b60ff9.png"
             alt=""
           />
