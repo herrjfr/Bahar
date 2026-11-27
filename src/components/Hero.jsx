@@ -18,8 +18,8 @@ function Hero() {
   const swiperRef = useRef(null)
 
   return (
-    <section className="w-full flex justify-center">
-      <div className="relative w-full max-w-[1220px]">
+    <section className="w-full px-[150px]">
+      <div className="relative w-full">
         <Swiper
           modules={[Autoplay]}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
