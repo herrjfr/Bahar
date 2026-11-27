@@ -1254,7 +1254,7 @@ function Brends() {
   }
 
   return (
-    <div className="pt-[20px] mt-[20px] pb-[40px] bg-[#FAF9F9]">
+    <div className="pt-[20px] pb-[40px] bg-[#FAF9F9]">
 
       <div className="mx-auto pt-[20px] px-[150px]">
 

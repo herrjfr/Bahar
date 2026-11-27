@@ -42,8 +42,6 @@ export const ProductsProvider = ({ children }) => {
 
     const [products, setProducts] = useState(data)
 
-    const [topThree,setTopThree] = useState(2)
-
     return (
         <ProductsContext.Provider value={{
             products, setProducts,
