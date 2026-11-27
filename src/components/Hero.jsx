@@ -18,8 +18,8 @@ function Hero() {
   const swiperRef = useRef(null)
 
   return (
-    <section className='w-full px-[150] h-[100%]'>
-      <div className='relative w-[81%] h-[100%] mx-auto flex items-center justify-center  overflow-hidden'>
+    <section className="w-full flex justify-center">
+      <div className="relative w-full max-w-[1220px]">
         <Swiper
           modules={[Autoplay]}
           onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -27,34 +27,31 @@ function Hero() {
           slidesPerView={1}
           speed={900}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
+          className="w-full"
         >
           {images.map((P, i) => (
             <SwiperSlide key={i}>
-              <div className='w-full aspect-[17/7] overflow-hidden'>
-                <img
-                  src={P}
-                  alt=''
-                  className='w-full h-full object-cover'
-                />
+              <div className="w-full aspect-[17/7] overflow-hidden">
+                <img src={P} alt="" className="w-full h-full object-cover" />
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
 
-        {/* sol  */}
+        {/* sol */}
         <button
           onClick={() => swiperRef.current?.slidePrev()}
-          className='absolute left-3 top-1/2 -translate-y-1/2 z-10 w-13 h-13 rounded-full bg-white/40 hover:bg-white flex items-center justify-center cursor-pointer shadow'
+          className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-16 h-16 rounded-full bg-white/40 hover:bg-white flex items-center justify-center cursor-pointer shadow"
         >
-          <ArrowLeft className='w-4 h-4 text-gray-900' />
+          <ArrowLeft className="w-4 h-4 text-gray-900" />
         </button>
 
-        {/* sağ  */}
+        {/* sağ */}
         <button
           onClick={() => swiperRef.current?.slideNext()}
-          className='absolute right-3 top-1/2 -translate-y-1/2 z-10 w-13 h-13 rounded-full bg-white/40 hover:bg-white flex items-center justify-center cursor-pointer '
+          className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-16 h-16 rounded-full bg-white/40 hover:bg-white flex items-center justify-center cursor-pointer shadow"
         >
-          <ArrowRight className='w-4 h-4 text-gray-900' />
+          <ArrowRight className="w-4 h-4 text-gray-900" />
         </button>
       </div>
     </section>
